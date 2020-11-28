@@ -1,10 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
+import {promotionSelectedAction} from '../../actions';
 
 const PromotionSummary = (props) => {
     const {id,description,createdBy,createDate} = {...props.promotion}
 
     return (
-       <tr>
+       <tr onDoubleClick={()=>props.promotionSelectedAction(id)}>
            <td>{id}</td>
            <td>{description}</td>
            <td>{createdBy}</td>
@@ -13,4 +16,8 @@ const PromotionSummary = (props) => {
     );
 }
 
-export default PromotionSummary;
+const mapDispatchToProps = dispatch => ({
+    promotionSelectedAction : (id) => dispatch(promotionSelectedAction(id))
+});
+
+export default connect(null,mapDispatchToProps)(PromotionSummary);

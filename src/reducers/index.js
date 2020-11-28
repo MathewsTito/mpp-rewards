@@ -12,9 +12,27 @@ const menuSelection = (currSelection=-1,action) => {
             return currSelection;
     }
 }
+
+const promotionSelection = (currSelection=-1,action) => {
+    switch (action.type) {
+        case 'promotion/selected': {
+            const newSelection = action.placeholder;
+            return newSelection;
+        }
+
+        case 'menu/selected': {
+            return -1;
+        }
+
+        default:
+            return currSelection;
+    }
+}
  
+
 const reducers = combineReducers({
-        menuSelection: menuSelection
+        menuSelection: menuSelection,
+        promotionSelection: promotionSelection
     });
 
 

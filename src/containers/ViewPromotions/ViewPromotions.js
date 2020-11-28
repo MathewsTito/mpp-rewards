@@ -3,7 +3,7 @@ import PromotionList from '../../components/Promotion/PromotionList'
 import Layout from '../../components/Layout/Layout'
 
 import classes from './ViewPromotions.module.css'
-import promotionDetail from '../../components/Promotion/PromotionDetail'
+import PromotionDetail from '../../components/Promotion/PromotionDetail'
 
 class ViewPromotions extends Component{
 
@@ -40,7 +40,7 @@ class ViewPromotions extends Component{
                 <div className={classes.ViewPromotions}>
                     <div className={classes.Heading}>
                         <h2>
-                            Available Promotions
+                            Promotions
                         </h2>
                         <div className={classes.SearchPanel}>
                             <input type="text" value="Enter Promotion Id"/>
@@ -51,6 +51,7 @@ class ViewPromotions extends Component{
                     </div>
                 </div>
                 <PromotionList promotionList={this.state.promotionList}/>
+                <PromotionDetail/>
             </React.Fragment>
         );
     }
