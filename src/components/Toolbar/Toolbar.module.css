@@ -1,0 +1,35 @@
+.Toolbar { 
+    background-color: rgb(2, 2, 2); 
+    height: 65px;
+    width: 100%;
+    top:0px;
+    z-index: 1;
+}
+
+.Toolbar .Brand {
+    padding: 2px 2px 2px 20px;
+    color: white;
+    vertical-align: middle;
+    font-size: 25px;
+
+    background:  url(../../assets/brand.png)  no-repeat 2px 2px; 
+    z-index: 2;
+    height: 100%;
+    background-size: 179px 60px; 
+    width: 200px;
+    float:left;
+}
+
+.Toolbar .LeftPanel {
+    float:right;
+    width: 25%;
+    height: 100%;
+    z-index: 2;
+}
+
+.Toolbar .LeftPanel .ProfileIcon {
+    float:right;
+    z-index: 2;
+    color:white;
+    padding: 5px 20px 5px 5px;
+}

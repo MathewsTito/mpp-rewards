@@ -1,0 +1,25 @@
+.MenuItemLevel2{
+    background-color: rgb(226, 225, 225);
+    color: #000;
+    padding-left: 30px;
+    font-family: 'Open Sans', sans-serif;  
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.MenuItemLevel2:hover{
+    background-color: black;
+    color: white;
+    font-weight:bold;
+}
+
+.MenuItemLevel2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.Hilite {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}

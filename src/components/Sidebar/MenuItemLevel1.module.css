@@ -1,0 +1,29 @@
+.MenuItemLevel1{
+    background-color: rgb(226, 225, 225);
+    color: #000;
+    line-height: 40px;
+    padding-left: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.MenuItemLevel1:hover{
+    background-color: black;
+    color: white;
+    font-weight:bold;
+}
+
+.SubMenu{
+    transition: all .5s ease-in-out;
+    line-height: 25px;
+}
+
+.Expanded {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.Collapsed {
+    max-height: 0px;
+    overflow: hidden;
+}

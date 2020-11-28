@@ -1,0 +1,43 @@
+.ViewPromotion {
+    margin: auto;
+    height: 70px
+}
+
+.ViewPromotion .hide {
+    height: 0px;
+    overflow: hidden
+}
+
+.SearchPanel {
+    border-radius: 25px;
+    background-color: rgb(204, 204, 204);
+    height: 35px;
+    width: 250px;
+    margin: 10px 15px 15px 10px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.SearchPanel input {
+    border: none;
+    background-color: rgb(204, 204, 204);
+    margin-left: 15px;
+    max-width: 190px;
+}
+
+.SearchPanel .Icon {
+    margin-right: 15px;
+}
+
+.SearchPanel textarea:focus, input:focus {
+    outline: none;
+    border: none;
+}
+
+.Heading {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}
