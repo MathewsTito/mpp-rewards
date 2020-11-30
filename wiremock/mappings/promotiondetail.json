@@ -1,0 +1,21 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/promotions/12345"
+    },
+    "response": {
+        "status": 200,
+        "jsonBody": {
+            "promotionId": 12345,
+            "promotionName": "This is the name of my promotion",
+            "promotionDescription": "My very first promotion",
+            "promotionType": "TYPE",
+            "affiliateNetwork": "Affiliate Network",            
+            "createdBy": "Tito Mathews",
+            "createDate": "04/08/2005"
+        },
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

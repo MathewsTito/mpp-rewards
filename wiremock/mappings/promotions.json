@@ -1,0 +1,44 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/promotions"
+    },
+    "response": {
+        "status": 200,
+        "jsonBody": [{
+            "promotionId": 12345,
+            "promotionDescription": "My very first promotion",
+            "createdBy": "Tito Mathews",
+            "createDate": "04/08/2005"
+         },
+         {  "promotionId": 12346,
+            "promotionDescription": "My very second promotion",
+            "createdBy": "Tito Mathews",
+            "createDate": "04/09/2005"
+         },
+         {  "promotionId": 12347,
+            "promotionDescription": "My very second promotion v2",
+            "createdBy": "Tito Mathews",
+            "createDate": "04/09/2005"
+         },
+         {  "promotionId": 12348,
+            "promotionDescription": "My very second promotion v3",
+            "createdBy": "Tito Mathews",
+            "createDate": "04/09/2005"
+         },
+         {  "promotionId": 12349,
+            "promotionDescription": "My very third promotion v1",
+            "createdBy": "Tito Mathews",
+            "createDate": "04/09/2005"
+         },
+         {  "promotionId": 12350,
+            "promotionDescription": "My very fifth promotion v6",
+            "createdBy": "Tito Mathews",
+            "createDate": "04/09/2005"
+         }
+        ],
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

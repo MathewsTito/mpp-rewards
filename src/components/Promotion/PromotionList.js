@@ -12,6 +12,8 @@ const PromotionList = (props) => {
 
     if(props.selectedPromotionId > 0) 
         myclasses.push(classes.Hidden);
+    else
+        myclasses.push(classes.Visible);
 
     return (
         <div className={myclasses.join(' ')}>

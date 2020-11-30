@@ -1,0 +1,19 @@
+.KeyValue {
+    padding: 0px 0px 0px 0px;
+}
+
+.KeyValue table {
+    border-collapse: collapse; 
+    border: 1px solid gray;
+}
+
+.KeyValue tr {
+    border-collapse: collapse; 
+    border: 1px solid gray;
+}
+
+.KeyValue td {
+    border-collapse: collapse; 
+    border: 1px solid gray;
+    padding: 3px 3px 3px 3px;
+}

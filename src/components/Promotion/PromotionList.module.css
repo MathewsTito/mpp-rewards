@@ -1,9 +1,14 @@
 .PromotionList {
     margin: 3px 10px 3px 10px;
+    transition: height 2s ease-in-out;
+    /*outline: 2px dashed rgb(255, 0, 13);*/
 }
 
-.Hidden {
-    visibility: hidden;
-    display: none;
+.PromotionList.Hidden {
+    overflow: hidden;
     height: 0px;
+}
+
+.PromotionList.Visible {
+    max-height: 500px;
 }
