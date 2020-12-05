@@ -55,6 +55,7 @@ class Sidebar extends React.Component {
                                         action={()=>{this.toggleSubMenu(item.key)}}
                                         expanded={this.state.expanded[item.key]}
                                         subMenus={item.subMenus}
+                                        key={item.key}
                                     />
                                 );
                             })

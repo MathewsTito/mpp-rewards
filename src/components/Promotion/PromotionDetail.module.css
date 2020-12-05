@@ -18,6 +18,7 @@
     /*border: 1px rgb(206, 205, 205) solid;*/
     padding: 8px 8px 20px 8px;
     margin-left: 20px;
+    width: 48%;
 }
 
 .Label {
@@ -39,6 +40,7 @@
     font-family: 'Roboto Mono', monospace;
     font-size: 1.2em;
     vertical-align: top;
+
 }
 
 .Content {
@@ -51,4 +53,24 @@
     margin: 4px 4px 4px 0px;
     
 }
+
+.TableData td {
+    border-collapse: collapse; 
+    border: 1px solid gray;
+    padding: 5px 10px 5px 10px;
+}
+.TableData tr {
+    border-collapse: collapse; 
+    border: 1px solid gray;
+    padding: 5px 10px 5px 10px;
+
+}
+.TableData th {
+    border-collapse: collapse; 
+    border: 1px solid gray;
+    padding: 5px 10px 5px 10px;
+
+}
+
+
 

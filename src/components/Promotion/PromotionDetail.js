@@ -92,7 +92,7 @@ const promotionDetail = (props) => {
             <div className={classes.Section}>
                 <h4 className={classes.Heading}>PROMOTIONAL CAPS</h4>
                 <div className={classes.Content}>
-                    <table>
+                    <table className={classes.TableData}>
                         <tr>
                             <th>Cap Type</th>
                             <th>Cap Time Unit</th>
@@ -100,6 +100,42 @@ const promotionDetail = (props) => {
                             <th>Cap value</th>
                         </tr>
                     </table>
+                </div>
+            </div>
+
+
+            <div className={classes.Section}>
+                <h4 className={classes.Heading}>ADJUSTMENTS</h4>
+                <div className={classes.Content}>
+
+                </div>
+            </div>
+
+            <div className={classes.Section}>
+                <h4 className={classes.Heading}>MERCHANTS</h4>
+                <div className={classes.Content}>
+
+                </div>
+            </div>
+
+            <div className={classes.Section}>
+                <h4 className={classes.Heading}>OFFERS USING THIS PROMOTION</h4>
+                <div className={classes.Content}>
+
+                </div>
+            </div>
+
+            <div className={classes.Section}>
+                <h4 className={classes.Heading}>APPROVAL LOGS</h4>
+                <div className={classes.Content}>
+
+                </div>
+            </div>
+
+            <div className={classes.Section}>
+                <h4 className={classes.Heading}>ACTIONS</h4>
+                <div className={classes.Content}>
+
                 </div>
             </div>
 
