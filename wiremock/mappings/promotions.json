@@ -1,44 +1,45 @@
 {
     "request": {
         "method": "GET",
-        "url": "/promotions"
+        "url": "/promotions?orgId=ERWD"
     },
     "response": {
         "status": 200,
         "jsonBody": [{
-            "promotionId": 12345,
-            "promotionDescription": "My very first promotion",
+            "id": 12345,
+            "description": "My very first promotion",
             "createdBy": "Tito Mathews",
             "createDate": "04/08/2005"
          },
-         {  "promotionId": 12346,
-            "promotionDescription": "My very second promotion",
+         {  "id": 12346,
+            "description": "My very second promotion",
             "createdBy": "Tito Mathews",
             "createDate": "04/09/2005"
          },
-         {  "promotionId": 12347,
-            "promotionDescription": "My very second promotion v2",
+         {  "id": 12347,
+            "description": "My very second promotion v2",
             "createdBy": "Tito Mathews",
             "createDate": "04/09/2005"
          },
-         {  "promotionId": 12348,
-            "promotionDescription": "My very second promotion v3",
+         {  "id": 12348,
+            "description": "My very second promotion v3",
             "createdBy": "Tito Mathews",
             "createDate": "04/09/2005"
          },
-         {  "promotionId": 12349,
-            "promotionDescription": "My very third promotion v1",
+         {  "id": 12349,
+            "description": "My very third promotion v1",
             "createdBy": "Tito Mathews",
             "createDate": "04/09/2005"
          },
-         {  "promotionId": 12350,
-            "promotionDescription": "My very fifth promotion v6",
+         {  "id": 12350,
+            "description": "My very fifth promotion v6",
             "createdBy": "Tito Mathews",
             "createDate": "04/09/2005"
          }
         ],
         "headers": {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
         }
     }
 }

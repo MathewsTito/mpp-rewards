@@ -9,11 +9,11 @@ import {menuSelectedAction} from '../../actions';
 
 const MenuItemLevel2 = (props) => {
 
-    const {displayLine,action,css,path,mkey,currMenuSelectionKey} = {...props};
+    const {displayLine,action,css,mpath,mkey,currMenuSelectionKey} = {displayLine:"",mpath:"/",mkey:-1, ...props};
 
     const menuItemClasses = [classes.MenuItemLevel2];
 
-    if (mkey === currMenuSelectionKey){
+    if (mkey == currMenuSelectionKey){
         menuItemClasses.push(classes.Hilite);
     }
 
@@ -21,7 +21,7 @@ const MenuItemLevel2 = (props) => {
         <div className={menuItemClasses.join(' ')} onClick={action}>
             <span className={css}> </span>
             <span> 
-                <Link to={path}>&nbsp;{displayLine}</Link>
+                <Link to={mpath}>&nbsp;{displayLine}</Link>
             </span>
         </div>       
         

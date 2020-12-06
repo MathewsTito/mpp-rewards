@@ -1,36 +1,17 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+
 import PromotionList from '../../components/Promotion/PromotionList'
 import Layout from '../../components/Layout/Layout'
-
 import classes from './ViewPromotions.module.css'
 import PromotionDetail from '../../components/Promotion/PromotionDetail'
+import {loadPromotionsAction} from '../../actions'
 
 class ViewPromotions extends Component{
 
-    state = {
-        promotionId: 0,
-        promotionDetail: null,
 
-    }
-
-    handleSearch = () => {
-
-    }
-
-    componentDidMount(){
-        const promotionList = [
-            {id:123456,
-            description: "My first promotion description",
-            createdBy: "tmathe5",
-            createDate: "04/03/2020"},
-            {id:123457,
-            description: "My other promotion",
-            createdBy: "tmathe5",
-            createDate: "03/20/2020"}
-        ]
-
-        this.setState({promotionList: [...promotionList]});
-
+    componentDidMount() {
+        this.props.loadPromotionList("ERWD");
     }
 
     render() {
@@ -50,11 +31,25 @@ class ViewPromotions extends Component{
                         </div>
                     </div>
                 </div>
-                <PromotionList promotionList={this.state.promotionList}/>
+                <PromotionList promotionList={this.props.promotionList}/>
                 <PromotionDetail/>
             </React.Fragment>
         );
     }
 }
 
-export default ViewPromotions;
+const mapStateToProps =(state) =>(
+    {
+        promotionList: state.promotionList
+    }
+)
+
+
+
+const mapDispatchToProps =(dispatch) =>{
+    return {
+        loadPromotionList: (orgId) => dispatch(loadPromotionsAction(orgId))
+    };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(ViewPromotions);

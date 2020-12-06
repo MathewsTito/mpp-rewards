@@ -1,6 +1,7 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 
 import Layout from './components/Layout/Layout'
 import reducers from './reducers';
@@ -16,7 +17,7 @@ function App() {
     appProfile: "Cardmember Rewards"
   }
 
-  const store = createStore(reducers);
+  const store = createStore(reducers,applyMiddleware(thunk));
 
   return (
     <div>

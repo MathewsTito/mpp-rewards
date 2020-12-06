@@ -1,5 +1,7 @@
 import {combineReducers} from 'redux';
 
+import OfferAPI from '../apis/OfferAPI';
+
 
 const menuSelection = (currSelection=-1,action) => {
     switch (action.type){
@@ -28,11 +30,25 @@ const promotionSelection = (currSelection=-1,action) => {
             return currSelection;
     }
 }
+
+const promotionListLoad =(currentList=[],action) => {
+    
+    switch (action.type){
+        case 'promotion/load-list': {
+            console.log("setting state with new promotions list")
+            return action.placeholder;        
+        }
+
+        default:
+            return currentList;
+    }
+}
  
 
 const reducers = combineReducers({
         menuSelection: menuSelection,
-        promotionSelection: promotionSelection
+        promotionSelection: promotionSelection,
+        promotionList: promotionListLoad
     });
 
 

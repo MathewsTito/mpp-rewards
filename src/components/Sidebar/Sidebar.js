@@ -48,7 +48,7 @@ class Sidebar extends React.Component {
                     <nav>
                         {
                             items.map((item,i) => {
-                                console.log(item.subMenus);
+                                //console.log(item.subMenus);
                                 return (
                                     <MenuItemLevel1 
                                         displayLine={item.displayLine}
