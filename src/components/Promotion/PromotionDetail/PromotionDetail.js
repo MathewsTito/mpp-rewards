@@ -2,16 +2,25 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import classes from './PromotionDetail.module.css';
-import KeyValue from './KeyValue';
+import KeyValue from '../../common/KeyValue';
 
-const promotionDetail = (props) => {
+const promotionDetail = (props) => { 
 
     const myclasses = [classes.PromotionDetail];
 
-    if (props.selectedPromotionId < 0) {
-        myclasses.push(classes.Hidden);
-    } else {
+    console.log(props);
+
+    const query = new URLSearchParams(props.location.search)
+    for (let param of query.entries()){
+        console.log(param);
+    }
+
+    const promoId = props.match.params.promoid;
+
+    if (promoId > 0) {
         myclasses.push(classes.Visible);
+    } else {
+        myclasses.push(classes.Hidden);
     }
 
     return (
@@ -23,7 +32,7 @@ const promotionDetail = (props) => {
                         <tbody>
                             <tr>
                                 <td className={classes.Label}>Promotion Id:</td>
-                                <td className={classes.Value}>{props.selectedPromotionId}</td>
+                                <td className={classes.Value}>{promoId}</td>
                             </tr>
                             <tr>
                                 <td className={classes.Label}>Promotion Name:</td>
@@ -75,7 +84,7 @@ const promotionDetail = (props) => {
                                 <td className={classes.Value}>PURCHASES (INCL DISCOVER PRODUCT FEES)</td>
                             </tr>
                             <tr>
-                                <td className={classes.Label} colSpan="2" style={{"background-color":"white","text-align": "center","padding-top": "10px"}}>Events specific fields</td>
+                                <td className={classes.Label} colSpan="2" style={{backgroundColor:"white",textAlign: "center",paddingTop: "10px"}}>Events specific fields</td>
 
                             </tr>
                             <tr>
@@ -144,7 +153,7 @@ const promotionDetail = (props) => {
 }
 
 const mapStateToProps = state => ({
-    selectedPromotionId: state.promotionSelection
+    selectedPromotion: state.promotionSelection
 
 });
 

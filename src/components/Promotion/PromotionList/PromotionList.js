@@ -1,24 +1,22 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import PromotionList from '../../components/Promotion/PromotionList'
-import Layout from '../../components/Layout/Layout'
-import classes from './ViewPromotions.module.css'
-import PromotionDetail from '../../components/Promotion/PromotionDetail'
-import {loadPromotionsAction} from '../../actions'
+import PromotionSummaryTable from './PromotionSummaryTable'
+import classes from './PromotionList.module.css'
+import {loadPromotionsAction} from '../../../actions'
 
-class ViewPromotions extends Component{
-
-
+class PromotionList extends Component{
+ 
+ 
     componentDidMount() {
         this.props.loadPromotionList("ERWD");
     }
-
-    render() {
+ 
+    render() {  
 
         return (
             <React.Fragment>
-                <div className={classes.ViewPromotions}>
+                <div className={classes.PromotionList}>
                     <div className={classes.Heading}>
                         <h2>
                             Promotions
@@ -31,8 +29,7 @@ class ViewPromotions extends Component{
                         </div>
                     </div>
                 </div>
-                <PromotionList promotionList={this.props.promotionList}/>
-                <PromotionDetail/>
+                <PromotionSummaryTable promotionList={this.props.promotionList}/>
             </React.Fragment>
         );
     }
@@ -52,4 +49,4 @@ const mapDispatchToProps =(dispatch) =>{
     };
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(ViewPromotions);
+export default connect(mapStateToProps,mapDispatchToProps)(PromotionList);

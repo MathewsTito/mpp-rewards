@@ -4,18 +4,18 @@ import {connect} from 'react-redux';
 import PromotionSummary from './PromotionSummary';
 import classes from './PromotionList.module.css'
 
-
-const PromotionList = (props) => {
+  
+const PromotionSummaryTable = (props) => {
     const {promotionList} = {...props};
 
-    const myclasses = [classes.PromotionList]
+    const myclasses = [classes.PromotionSummaryTable]
 
     if(props.selectedPromotionId > 0) 
         myclasses.push(classes.Hidden);
     else
         myclasses.push(classes.Visible);
 
-    return (
+    return ( 
         <div className={myclasses.join(' ')}>
             <table class="table table-hover">
                 <thead>
@@ -37,8 +37,8 @@ const PromotionList = (props) => {
 }
 
 const mapStateToProps = state => ({
-    selectedPromotionId: state.promotionSelection
+    selectedPromotionId: state.promotionSelection.promoId
 
 });
 
-export default connect(mapStateToProps)(PromotionList);
+export default connect(mapStateToProps)(PromotionSummaryTable);

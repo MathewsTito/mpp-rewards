@@ -7,10 +7,10 @@ export const menuSelectedAction = (mKey) => (
     }
 )
 
-export const promotionSelectedAction = (promoId) => (
+export const viewPromotionAction = (promoId) => (
     {
-        type: "promotion/selected",
-        placeholder: promoId
+        type: "promotion/view",
+        placeholder: {promoId:promoId,action:"view"}
     }
 )
 

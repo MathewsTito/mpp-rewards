@@ -1,0 +1,25 @@
+.CRUDControls {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;   
+    height: 100%; 
+}
+
+.Icon {
+    margin: 0px 2px 0px 2px;
+    padding: 5px 3px 2px 3px;
+    height: 28px;
+    width: 28px;
+    display: flex;
+    justify-content: space-around;
+    vertical-align: middle;
+    color: gray;
+}
+
+.Icon:hover {
+    border: 1px solid grey;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+}

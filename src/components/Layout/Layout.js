@@ -1,8 +1,11 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+
 import classes from './Layout.module.css';
 import Toolbar from '../Toolbar/Toolbar';
 import Sidebar from '../Sidebar/Sidebar';
+import ViewPromotions from '../Promotion/PromotionList/PromotionList';
+import PromotionDetail from '../Promotion/PromotionDetail/PromotionDetail'
 
 
 const Layout = ( props ) => {
@@ -29,7 +32,7 @@ const Layout = ( props ) => {
                 {
                     key: 13,
                     displayLine: "View Existing",
-                    path: "/viewPromotion",
+                    path: "/promotions",
                     css: "fas fa-eye"
                 }
             ]
@@ -88,7 +91,7 @@ const Layout = ( props ) => {
 
         }
     ]
-    return (
+    return ( 
         <Router>            
             <Toolbar profileInfo={profileInfo}/>
 
@@ -96,15 +99,14 @@ const Layout = ( props ) => {
             
             <main className={classes.Main}>
                     <Switch>
-                        <Route path="/viewPromotion">
-                            {props.children}
-                        </Route>
+                        <Route path="/promotions" exact component={ViewPromotions}/>
+                        <Route path="/promotions/:promoid" exact component={PromotionDetail}/>
                     </Switch>
             </main>
 
 
-        </Router>
+        </Router> 
     );
 }
-
-export default Layout;
+ 
+export default Layout; 

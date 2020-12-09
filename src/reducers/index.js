@@ -15,15 +15,15 @@ const menuSelection = (currSelection=-1,action) => {
     }
 }
 
-const promotionSelection = (currSelection=-1,action) => {
+const promotionSelection = (currSelection={promoId:-1,action:null},action) => {
     switch (action.type) {
-        case 'promotion/selected': {
+        case 'promotion/view': {
             const newSelection = action.placeholder;
             return newSelection;
         }
 
         case 'menu/selected': {
-            return -1;
+            return {promoId:-1,action:null};
         }
 
         default:

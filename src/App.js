@@ -5,11 +5,11 @@ import thunk from 'redux-thunk';
 
 import Layout from './components/Layout/Layout'
 import reducers from './reducers';
-import ViewPromotions from './containers/ViewPromotions/ViewPromotions'
 
+ 
 
 function App() {
-  
+   
   const profile = {
     name: "Tito Mathews",
     org: "Enterprise Rewards",
@@ -25,7 +25,7 @@ function App() {
       <Provider store={store}>
 
         <Layout profileInfo={profile}>
-          <ViewPromotions/>
+          
         </Layout>
 
       </Provider>
@@ -35,3 +35,4 @@ function App() {
 }
 
 export default App;
+ 
