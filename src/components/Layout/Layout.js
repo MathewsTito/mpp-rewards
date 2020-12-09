@@ -4,8 +4,8 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import classes from './Layout.module.css';
 import Toolbar from '../Toolbar/Toolbar';
 import Sidebar from '../Sidebar/Sidebar';
-import ViewPromotions from '../Promotion/PromotionList/PromotionList';
-import PromotionDetail from '../Promotion/PromotionDetail/PromotionDetail'
+import PromotionList from '../Promotion/PromotionList/PromotionList';
+import PromotionDetail from '../Promotion/PromotionDetail/PromotionDetail'; 
 
 
 const Layout = ( props ) => {
@@ -99,7 +99,7 @@ const Layout = ( props ) => {
             
             <main className={classes.Main}>
                     <Switch>
-                        <Route path="/promotions" exact component={ViewPromotions}/>
+                        <Route path="/promotions" exact component={PromotionList}/>
                         <Route path="/promotions/:promoid" exact component={PromotionDetail}/>
                     </Switch>
             </main>

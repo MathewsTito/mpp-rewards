@@ -29,3 +29,19 @@ export const loadPromotionsAction = (orgId) => {
         );
     }
 } 
+
+export const loadPromotionDetailsAction = (promotId) => {
+    return async (dispatch) => {
+        //Call api to retrieve promotion list
+        
+        const {data} = await OfferAPI.get('promotions/'+promotId);
+        console.log("called api to retrieve promotion details...")
+        console.log(data);
+        dispatch(
+            {
+                type: "promotion/load-detail",
+                placeholder: data       
+            }
+        );
+    }  
+}

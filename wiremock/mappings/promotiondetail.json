@@ -1,18 +1,20 @@
 {
     "request": {
         "method": "GET",
-        "url": "/promotions/12345"
+        "urlPathPattern": "/promotions/([0-9]*)"
     },
     "response": {
+        "fixedDelayMilliseconds": 15000,
         "status": 200,
         "jsonBody": {
-            "promotionId": 12345,
+            "promotionId": "{{request.pathSegments.[1]}}",
             "promotionName": "This is the name of my promotion",
             "promotionDescription": "My very first promotion",
             "promotionType": "TYPE",
             "affiliateNetwork": "Affiliate Network",            
             "createdBy": "Tito Mathews",
-            "createDate": "04/08/2005"
+            "createDate": "04/08/2005",
+            "allowedActions": ["view","approve","edit","delete"]
         },
         "headers": {
             "Content-Type": "application/json"

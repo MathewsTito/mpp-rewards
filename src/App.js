@@ -8,7 +8,7 @@ import reducers from './reducers';
 
  
 
-function App() {
+function App() { 
    
   const profile = {
     name: "Tito Mathews",

@@ -43,12 +43,26 @@ const promotionListLoad =(currentList=[],action) => {
             return currentList;
     }
 }
+
+const promotionDetailLoad =(currentDetail={},action) => {
+    
+    switch (action.type){
+        case 'promotion/load-detail': {
+            console.log("setting state with new promotion detail")
+            return action.placeholder;        
+        }
+
+        default:
+            return currentDetail;
+    }
+}
  
 
 const reducers = combineReducers({
         menuSelection: menuSelection,
         promotionSelection: promotionSelection,
-        promotionList: promotionListLoad
+        promotionList: promotionListLoad,
+        promotionDetail: promotionDetailLoad
     });
 
 
