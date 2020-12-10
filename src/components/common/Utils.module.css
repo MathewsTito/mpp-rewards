@@ -1,5 +1,38 @@
 .Loading {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center 
+}
+
+.Loading img {
+    margin: 0;
+}
+
+.ConfirmationPanel {
+    display: flex;
+    justify-content: space-around;
+    outline: 1px solid gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 10px 10px 10px 10px;
+}
+
+.ConfirmationPanel Button{
+    margin: 5px 5px 5px 5px;
+    background-color: #faa368;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 90px;
+}
+
+.ConfirmationPanel Button:hover{
+    background-color: #ff6600;
+    color: white;
+}
+
+.ConfirmationPanel p {
+    margin: auto;
 }

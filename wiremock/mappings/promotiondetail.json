@@ -4,7 +4,7 @@
         "urlPathPattern": "/promotions/([0-9]*)"
     },
     "response": {
-        "fixedDelayMilliseconds": 15000,
+        "fixedDelayMilliseconds": 3000,
         "status": 200,
         "jsonBody": {
             "promotionId": "{{request.pathSegments.[1]}}",
