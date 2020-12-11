@@ -39,6 +39,10 @@ const promotionListLoad =(currentList=[],action) => {
             return action.placeholder;        
         }
 
+        case 'promotion/delete':
+        case 'promotion/approve':
+            return [];
+
         default:
             return currentList;
     }

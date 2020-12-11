@@ -30,6 +30,8 @@ export const loadPromotionsAction = (orgId) => {
     }
 } 
 
+
+
 export const loadPromotionDetailsAction = (promotId) => {
     return async (dispatch) => {
         //Call api to retrieve promotion list
@@ -45,3 +47,42 @@ export const loadPromotionDetailsAction = (promotId) => {
         );
     }  
 }
+
+
+export const deletePromotionAction = (promoId) => {
+    return async (dispatch) => {
+        //Call api to delete promotion
+        
+        //const {data} = await OfferAPI.delete('promotions/'+promoId);
+        const data ={};
+        console.log("called api to delete promotion ...")
+        console.log(data);
+        dispatch(
+            {
+                type: "promotion/delete",
+                placeholder: data       
+            }
+        );
+    } 
+}
+
+export const approvePromotionAction = (promoId) => {
+    return async (dispatch) => {
+        //Call api to approve promotion
+        
+        //const {data} = await OfferAPI.put('promotions/'+promoId);
+        const data = {};
+
+        console.log("called api to approve promotion ...")
+        console.log(data);
+        dispatch(
+            {
+                type: "promotion/approve",
+                placeholder: data       
+            }
+        );
+    } 
+}
+
+
+

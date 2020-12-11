@@ -19,7 +19,10 @@ export const NoPermission = () => (
 export const ConfirmationPanel = ({prompt,onConfirmAction,onCancelAction}) => {
     return (
         <div className={classes.ConfirmationPanel}>
-            <p>{prompt}<span><button>OK</button><button>Cancel</button></span></p>
+            
+            <span className="far fa-question-circle fa-4x"/>{prompt}<span><button onClick={onConfirmAction}>OK</button><button onClick={onCancelAction}>Cancel</button></span>
+
+            
         </div>
     );
 }

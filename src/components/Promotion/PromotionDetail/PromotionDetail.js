@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {Loading,NoPermission,ConfirmationPanel} from '../../common/Utils';
 import * as Constants from '../../common/Constants';
 import PromotionDetailView from './PromotionDetailView';
-import {loadPromotionDetailsAction} from '../../../actions';
+import {loadPromotionDetailsAction,approvePromotionAction,deletePromotionAction} from '../../../actions';
 
 class PromotionDetail extends Component{
 
@@ -13,11 +13,16 @@ class PromotionDetail extends Component{
         this.props.loadPromotionDetail(this.props.match.params.promoid);
     }
 
+    handleCancelAction = () => {
+        this.props.history.push("/promotions")
+    }
+
     
     render() {
         let promptText = "";
         const query = new URLSearchParams(this.props.location.search)
         const action = query.get("action");
+        const promoId = this.props.match.params.promoid;
 
         //Check if the details is still being loaded..
         if (Object.keys(this.props.promotionDetail).length == 0 
@@ -37,19 +42,25 @@ class PromotionDetail extends Component{
                 );
                 break;
             case Constants.ACCESS_APPROVE:
-                promptText = "Approve selected Promotion (id="+this.props.promotionDetail.promotionId+") ?";
+                promptText = "Approve selected Promotion (id="+promoId+") ?";
                 return (
                     <React.Fragment>
-                        <ConfirmationPanel prompt={promptText}/>
+                        <ConfirmationPanel 
+                            prompt={promptText} 
+                            onCancelAction={()=>this.handleCancelAction()}
+                            onConfirmAction={() => this.props.handleApproveAction(promoId,this.props.history)}/>
                         <PromotionDetailView promotionDetail={this.props.promotionDetail}/>
                     </React.Fragment>
                 )
                 break;
             case Constants.ACCESS_DELETE:
-                promptText = "Delete selected Promotion (id="+this.props.promotionDetail.promotionId+") ?";
+                promptText = "Delete selected Promotion (id="+promoId+") ?";
                 return (
                     <React.Fragment>
-                        <ConfirmationPanel prompt={promptText}/>
+                        <ConfirmationPanel 
+                            prompt={promptText} 
+                            onCancelAction={()=>this.handleCancelAction()}
+                            onConfirmAction={()=>this.props.handleDeleteAction(promoId,this.props.history)}/>
                         <PromotionDetailView promotionDetail={this.props.promotionDetail}/>
                     </React.Fragment>
                 )
@@ -64,6 +75,8 @@ class PromotionDetail extends Component{
     }
 }
 
+
+
 const mapStateToProps =(state) =>(
     {
         promotionDetail: state.promotionDetail
@@ -71,10 +84,19 @@ const mapStateToProps =(state) =>(
 )
 
 
-
 const mapDispatchToProps =(dispatch) =>{
     return {
-        loadPromotionDetail: (promotId) => dispatch(loadPromotionDetailsAction(promotId))
+        loadPromotionDetail: (promoId) => 
+            dispatch(loadPromotionDetailsAction(promoId)),
+        handleApproveAction: (promoId,history) => {
+            dispatch(approvePromotionAction(promoId));
+            history.push("/promotions")
+        },
+        handleDeleteAction: (promoId,history) => {
+            dispatch(deletePromotionAction(promoId));
+            history.push("/promotions")
+        }
+
     };
 }
 
