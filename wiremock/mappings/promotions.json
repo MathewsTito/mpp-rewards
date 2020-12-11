@@ -5,6 +5,7 @@
     },
     "response": {
         "status": 200,
+        "fixedDelayMilliseconds": 2000,
         "jsonBody": [{
             "id": 12345,
             "description": "My very first promotion",

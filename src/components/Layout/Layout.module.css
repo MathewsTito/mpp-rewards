@@ -1,3 +1,12 @@
 .Main {
   margin-left: 200px;
+  overflow: hidden;
+  width: calc(100%-200px);
+}
+.Body {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }

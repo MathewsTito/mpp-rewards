@@ -2,11 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import PromotionSummary from './PromotionSummary';
-import classes from './PromotionList.module.css'
+import classes from './PromotionList.module.css';
+import {Loading} from '../../common/Utils';
 
   
 const PromotionSummaryTable = (props) => {
     const {promotionList} = {...props};
+
+    if (promotionList == null)
+        return <Loading/>;
 
     const myclasses = [classes.PromotionSummaryTable]
 

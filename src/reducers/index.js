@@ -31,7 +31,7 @@ const promotionSelection = (currSelection={promoId:-1,action:null},action) => {
     }
 }
 
-const promotionListLoad =(currentList=[],action) => {
+const promotionListLoad =(currentList=null,action) => {
     
     switch (action.type){
         case 'promotion/load-list': {
@@ -41,7 +41,7 @@ const promotionListLoad =(currentList=[],action) => {
 
         case 'promotion/delete':
         case 'promotion/approve':
-            return [];
+            return null;
 
         default:
             return currentList;

@@ -13,7 +13,7 @@ const PromotionSummary = (props) => {
            <td>{description}</td>
            <td>{createdBy}</td>
            <td>{createDate}</td>
-           <td style={{padding: "0px 0px 0px 0px","vertical-align": "middle"}}>
+           <td style={{padding: "0px 15px 0px 0px","vertical-align": "middle"}}>
                <CRUDControls 
                     isDelete="true"
                     promoId={id}

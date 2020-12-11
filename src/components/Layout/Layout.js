@@ -94,16 +94,15 @@ const Layout = ( props ) => {
     return ( 
         <Router>            
             <Toolbar profileInfo={profileInfo}/>
-
-            <Sidebar menu={menu}/>
-            
-            <main className={classes.Main}>
-                    <Switch>
-                        <Route path="/promotions" exact component={PromotionList}/>
-                        <Route path="/promotions/:promoid" exact component={PromotionDetail}/>
-                    </Switch>
-            </main>
-
+          
+                <Sidebar menu={menu}/>
+                
+                <main className={classes.Main}>
+                        <Switch>
+                            <Route path="/promotions" exact component={PromotionList}/>
+                            <Route path="/promotions/:promoid" exact component={PromotionDetail}/>
+                        </Switch>
+                </main>
 
         </Router> 
     );
