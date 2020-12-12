@@ -1,14 +1,21 @@
 
 import React from 'react';
+import {connect} from 'react-redux';
 
 import classes from './Sidebar.module.css';
 import MenuItemLevel1 from './MenuItemLevel1';
+import {loadMenuAction} from '../../actions';
+import {Loading} from '../common/Utils';
 
 class Sidebar extends React.Component {
     
     state = {
         lastClick: -1,
         expanded: [false,false,false,false,false]
+    }
+
+    componentDidMount() { 
+        this.props.loadMenu();
     }
 
     toggleSubMenu = (menuKey) => {
@@ -39,8 +46,13 @@ class Sidebar extends React.Component {
     }
 
 
+
     render() {
-        const  items  = this.props.menu;
+        const  items  = this.props.menuItems;
+
+        if (items == null){
+            return (<Loading/>);
+        }
         
         return(
 
@@ -66,4 +78,22 @@ class Sidebar extends React.Component {
     }
 }
 
-export default Sidebar;
+const mapStateToProps = (state) => {
+    return  (
+        {
+            menuItems: state.menuItems
+        }
+    );
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return (
+        {
+            loadMenu: () => {dispatch(loadMenuAction())}
+        }
+    );
+}
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(Sidebar);

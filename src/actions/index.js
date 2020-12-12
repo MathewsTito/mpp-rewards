@@ -84,5 +84,23 @@ export const approvePromotionAction = (promoId) => {
     } 
 }
 
+export const loadMenuAction = () => {
+    return async (dispatch) => {
+        //Call api to approve promotion
+        
+        const {data} = await OfferAPI.get('/menu');
+        //const data = {};
+
+        console.log("called api to retrieve menu ...")
+        console.log(data);
+        dispatch(
+            {
+                type: "menu/load",
+                placeholder: data       
+            }
+        );
+    } 
+}
+
 
 

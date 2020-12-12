@@ -41,6 +41,7 @@ const promotionListLoad =(currentList=null,action) => {
 
         case 'promotion/delete':
         case 'promotion/approve':
+        case 'promotion/load-detail':
             return null;
 
         default:
@@ -60,13 +61,26 @@ const promotionDetailLoad =(currentDetail={},action) => {
             return currentDetail;
     }
 }
- 
+
+const menuItemsLoad = (currentItems=null,action) => {
+    switch (action.type){
+        case 'menu/load': {
+            console.log("loading menu items")
+            return action.placeholder;        
+        }
+
+        default:
+            return currentItems;
+    }
+}
+
 
 const reducers = combineReducers({
         menuSelection: menuSelection,
         promotionSelection: promotionSelection,
         promotionList: promotionListLoad,
-        promotionDetail: promotionDetailLoad
+        promotionDetail: promotionDetailLoad,
+        menuItems: menuItemsLoad
     });
 
 
