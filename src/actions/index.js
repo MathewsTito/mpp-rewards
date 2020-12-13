@@ -103,4 +103,12 @@ export const loadMenuAction = () => {
 }
 
 
+export const menuToggledAction = (menuKey) => (
+    {
+        type: "menu/toggled",
+        placeholder: {menuKey: menuKey}
+    }
+);
+
+
 

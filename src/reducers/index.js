@@ -69,6 +69,25 @@ const menuItemsLoad = (currentItems=null,action) => {
             return action.placeholder;        
         }
 
+        case 'menu/toggled': {
+            const selectedMenuKey = action.placeholder.menuKey;
+            const newItems = currentItems.map(item => {
+                if (item.key == selectedMenuKey){
+                    const newItem = {...item};
+                    newItem.expanded = !newItem.expanded;
+                    return newItem;
+                } else {
+                    const newItem = {...item};
+                    newItem.expanded = false; //we will close any item that is expanded
+                    return newItem;
+                }
+            }
+
+            );
+
+            return newItems;
+        }
+
         default:
             return currentItems;
     }

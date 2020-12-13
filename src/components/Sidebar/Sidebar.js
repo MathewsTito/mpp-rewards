@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import classes from './Sidebar.module.css';
 import MenuItemLevel1 from './MenuItemLevel1';
-import {loadMenuAction} from '../../actions';
+import {loadMenuAction, menuToggledAction} from '../../actions';
 import {Loading} from '../common/Utils';
 
 class Sidebar extends React.Component {
@@ -64,8 +64,8 @@ class Sidebar extends React.Component {
                                 return (
                                     <MenuItemLevel1 
                                         displayLine={item.displayLine}
-                                        action={()=>{this.toggleSubMenu(item.key)}}
-                                        expanded={this.state.expanded[item.key]}
+                                        action={()=>this.props.menuToggled(item.key)}
+                                        expanded={item.expanded}
                                         subMenus={item.subMenus}
                                         key={item.key}
                                     />
@@ -89,7 +89,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return (
         {
-            loadMenu: () => {dispatch(loadMenuAction())}
+            loadMenu: () => {dispatch(loadMenuAction())},
+            menuToggled: (menuKey) => {dispatch(menuToggledAction(menuKey))}
         }
     );
 }
