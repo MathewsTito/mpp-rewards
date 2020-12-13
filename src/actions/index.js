@@ -110,5 +110,19 @@ export const menuToggledAction = (menuKey) => (
     }
 );
 
+export const notificationAddAction = (category,content) => (
+    {
+        type: "notification/added",
+        placeholder: {type:category,content:content}
+    }
+);
+
+export const notificationDisplayedAction = () => (
+    {
+        type: "notification/displayed",
+        placeholder: {}
+    }
+);
+
 
 

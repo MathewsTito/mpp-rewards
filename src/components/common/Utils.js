@@ -26,3 +26,4 @@ export const ConfirmationPanel = ({prompt,onConfirmAction,onCancelAction}) => {
         </div>
     );
 }
+

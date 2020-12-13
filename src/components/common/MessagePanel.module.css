@@ -1,0 +1,25 @@
+ p {
+    height: 20px;
+    display: none;
+    overflow: hidden;
+}
+
+.MessagePanel .Show {
+    display: flex;
+}
+
+.MessagePanel .Hide {
+    display: none;
+}
+
+.MessagePanel .Normal {
+    color: black;
+}
+
+.MessagePanel .Warning {
+    color: rgb(255, 102, 0);
+}
+
+.MessagePanel .Error {
+    color: red;
+}

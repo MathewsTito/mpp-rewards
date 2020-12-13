@@ -6,6 +6,7 @@ import Toolbar from '../Toolbar/Toolbar';
 import Sidebar from '../Sidebar/Sidebar';
 import PromotionList from '../Promotion/PromotionList/PromotionList';
 import PromotionDetail from '../Promotion/PromotionDetail/PromotionDetail'; 
+import MessagePanel from '../common/MessagePanel';
 
 
 const Layout = ( props ) => {
@@ -18,6 +19,7 @@ const Layout = ( props ) => {
             <Sidebar/>
                 
             <main className={classes.Main}>
+                    <MessagePanel/>
                     <Switch>
                         <Route path="/promotions" exact component={PromotionList}/>
                         <Route path="/promotions/:promoid" exact component={PromotionDetail}/>

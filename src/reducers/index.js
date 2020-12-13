@@ -93,13 +93,24 @@ const menuItemsLoad = (currentItems=null,action) => {
     }
 }
 
+const notification = (currentState={content:null,displayed:true},action) => {
+    switch (action.type){
+        case "notification/displayed":
+            return {content:null,displayed:true};
+        case "notificaton/added":
+            return {...action.placeholder,displayed:false};
+        default:
+            return currentState;
+    }
+}
 
 const reducers = combineReducers({
         menuSelection: menuSelection,
         promotionSelection: promotionSelection,
         promotionList: promotionListLoad,
         promotionDetail: promotionDetailLoad,
-        menuItems: menuItemsLoad
+        menuItems: menuItemsLoad,
+        notification:notification
     });
 
 
