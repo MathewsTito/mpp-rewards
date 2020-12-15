@@ -15,16 +15,24 @@ export const viewPromotionAction = (promoId) => (
 )
 
 
-export const loadPromotionsAction = (orgId) => {
+export const loadPromotionsAction = (orgId="ERWD") => {
     return async (dispatch) => {
         //Call api to retrieve promotion list
         
-        const {data} = await OfferAPI.get('promotions?orgId='+orgId);
-        console.log("called api to retrieve promotions...")
+        const {data,status} = await OfferAPI.get('promotions?orgId='+orgId)
+                        .catch((error) =>{
+                            console.log("error calling api to retrieve promotion list ...");
+                            console.log(error.response.status);
+                            console.log(error.response.data);
+                            console.log(error.response.headers);
+                            return {data:[],status:error.response.status}
+                        });
+        console.log(data);
+        
         dispatch(
             {
                 type: "promotion/load-list",
-                placeholder: data       
+                placeholder: {status:status,data:data}      
             }
         );
     }
@@ -36,13 +44,20 @@ export const loadPromotionDetailsAction = (promotId) => {
     return async (dispatch) => {
         //Call api to retrieve promotion list
         
-        const {data} = await OfferAPI.get('promotions/'+promotId);
+        const {data,status} = await OfferAPI.get('promotions/'+promotId)
+                        .catch((error) =>{
+                            console.log("error calling api to retrieve promotion details ...");
+                            console.log(error.response.status);
+                            console.log(error.response.data);
+                            console.log(error.response.headers);
+                            return {data:null,status:error.response.status}
+                        });
         console.log("called api to retrieve promotion details...")
         console.log(data);
         dispatch(
             {
                 type: "promotion/load-detail",
-                placeholder: data       
+                placeholder: {status:status,data:data}       
             }
         );
     }  
@@ -52,15 +67,21 @@ export const loadPromotionDetailsAction = (promotId) => {
 export const deletePromotionAction = (promoId) => {
     return async (dispatch) => {
         //Call api to delete promotion
-        
-        const {data} = await OfferAPI.delete('promotions/'+promoId);
-        //const data ={};
-        console.log("called api to delete promotion ...")
-        console.log(data);
+        console.log("deletePromotionAction::calling api to delete promotion ...")
+        const {data,status} = await OfferAPI.delete('promotions/'+promoId)
+                                .catch((error) =>{
+                                    console.log("error calling api to delete promotion ...");
+                                    console.log(error.response.status);
+                                    console.log(error.response.data);
+                                    console.log(error.response.headers);
+                                    return {data:null,status:error.response.status}
+                                });
+        console.log("deletePromotionAction::returned.")
+        console.log(data)
         dispatch(
             {
                 type: "promotion/delete",
-                placeholder: data       
+                placeholder: {status:status,data:data}       
             }
         );
     } 
@@ -69,16 +90,22 @@ export const deletePromotionAction = (promoId) => {
 export const approvePromotionAction = (promoId) => {
     return async (dispatch) => {
         //Call api to approve promotion
-        
-        const {data} = await OfferAPI.put('promotions/'+promoId);
-        //const data = {};
+        console.log("approvePromotionAction::calling api to approve promotion ...")
+        const {data,status} = await OfferAPI.put('promotions/'+promoId)
+                                .catch((error) =>{
+                                    console.log("error calling api to approve promotion ...");
+                                    console.log(error.response.status);
+                                    console.log(error.response.data);
+                                    console.log(error.response.headers);
+                                    return {data:null,status:error.response.status}
+                                });
 
-        console.log("called api to approve promotion ...")
+        console.log("approvePromotionAction::returned.")
         console.log(data);
         dispatch(
             {
                 type: "promotion/approve",
-                placeholder: data       
+                placeholder: {status:status,data:data}       
             }
         );
     } 
@@ -87,11 +114,9 @@ export const approvePromotionAction = (promoId) => {
 export const loadMenuAction = () => {
     return async (dispatch) => {
         //Call api to approve promotion
-        
+        console.log("loadMenuAction::calling api to retrieve menu ...")
         const {data} = await OfferAPI.get('/menu');
-        //const data = {};
-
-        console.log("called api to retrieve menu ...")
+        console.log("loadMenuAction::returned.")
         console.log(data);
         dispatch(
             {

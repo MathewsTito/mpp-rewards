@@ -36,7 +36,7 @@ const promotionListLoad =(currentList=null,action) => {
     switch (action.type){
         case 'promotion/load-list': {
             console.log("setting state with new promotions list")
-            return action.placeholder;        
+            return action.placeholder.data;        
         }
 
         case 'promotion/delete':
@@ -53,8 +53,7 @@ const promotionDetailLoad =(currentDetail={},action) => {
     
     switch (action.type){
         case 'promotion/load-detail': {
-            console.log("setting state with new promotion detail")
-            return action.placeholder;        
+            return action.placeholder.data;        
         }
 
         default:
@@ -96,9 +95,35 @@ const menuItemsLoad = (currentItems=null,action) => {
 const notification = (currentState={content:null,displayed:true},action) => {
     switch (action.type){
         case "notification/displayed":
-            return {content:null,displayed:true};
-        case "notificaton/added":
-            return {...action.placeholder,displayed:false};
+            return {...currentState,displayed:true,content:null};
+
+        case "promotion/delete":
+            if (action.placeholder.status == 200)
+                return ({type:"NORMAL",content:"Successfully deleted promotion",displayed:false});
+            else
+                return ({type:"ERROR",content:"Error while deleting promotion. Please check logs",displayed:false});
+
+        case "promotion/approve":
+            if (action.placeholder.status == 200)
+                return ({type:"NORMAL",content:"Successfully approved promotion",displayed:false});
+            else
+                return ({type:"ERROR",content:"Error while approving promotion. Please check logs",displayed:false});
+
+        case "promotion/load-list":
+            if (action.placeholder.status == 200)
+                return currentState;
+            else
+                return ({type:"ERROR",content:"Error while retrieving promotion. Please check logs",displayed:false});
+
+        case "promotion/load-detail":
+            if (action.placeholder.status == 200)
+                return ({type:"NORMAL",content:"Successfully retrieved promotion details",displayed:false});
+            else
+                return ({type:"ERROR",content:"Error while retrieving promotion details. Please check logs",displayed:false});
+
+        case "notification/cleared":
+            return {content:null,displayed:false};
+            
         default:
             return currentState;
     }

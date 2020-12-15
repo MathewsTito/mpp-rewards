@@ -5,6 +5,7 @@ import {Loading,NoPermission,ConfirmationPanel} from '../../common/Utils';
 import * as Constants from '../../common/Constants';
 import PromotionDetailView from './PromotionDetailView';
 import {loadPromotionDetailsAction,approvePromotionAction,deletePromotionAction} from '../../../actions';
+import MessagePanel from '../../common/MessagePanel';
 
 class PromotionDetail extends Component{
 
@@ -38,13 +39,17 @@ class PromotionDetail extends Component{
         switch (action) {
             case Constants.ACCESS_VIEW:
                 return (
-                    <PromotionDetailView promotionDetail={this.props.promotionDetail}/>
+                    <React.Fragment>
+                        <MessagePanel/>
+                        <PromotionDetailView promotionDetail={this.props.promotionDetail}/>
+                    </React.Fragment>
                 );
                 break;
             case Constants.ACCESS_APPROVE:
                 promptText = "Approve selected Promotion (id="+promoId+") ?";
                 return (
                     <React.Fragment>
+                        <MessagePanel/>
                         <ConfirmationPanel 
                             prompt={promptText} 
                             onCancelAction={()=>this.handleCancelAction()}
@@ -57,6 +62,7 @@ class PromotionDetail extends Component{
                 promptText = "Delete selected Promotion (id="+promoId+") ?";
                 return (
                     <React.Fragment>
+                        <MessagePanel/>
                         <ConfirmationPanel 
                             prompt={promptText} 
                             onCancelAction={()=>this.handleCancelAction()}
@@ -86,14 +92,16 @@ const mapStateToProps =(state) =>(
 
 const mapDispatchToProps =(dispatch) =>{
     return {
-        loadPromotionDetail: (promoId) => 
-            dispatch(loadPromotionDetailsAction(promoId)),
-        handleApproveAction: (promoId,history) => {
-            dispatch(approvePromotionAction(promoId));
+        loadPromotionDetail: async (promoId) => {
+            await dispatch(loadPromotionDetailsAction(promoId))
+        },
+        handleApproveAction: async (promoId,history) => {
+            await dispatch(approvePromotionAction(promoId));
             history.push("/promotions")
         },
-        handleDeleteAction: (promoId,history) => {
-            dispatch(deletePromotionAction(promoId));
+        handleDeleteAction: async (promoId,history) => {
+            await dispatch(deletePromotionAction(promoId));
+            console.log("about to redirect to /promotions");
             history.push("/promotions")
         }
 

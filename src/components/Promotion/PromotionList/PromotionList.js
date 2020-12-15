@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import PromotionSummaryTable from './PromotionSummaryTable'
 import classes from './PromotionList.module.css'
 import {loadPromotionsAction} from '../../../actions'
+import MessagePanel from '../../common/MessagePanel';
 
 class PromotionList extends Component{
  
@@ -16,6 +17,7 @@ class PromotionList extends Component{
 
         return (
             <React.Fragment>
+                <MessagePanel/>
                 <div className={classes.PromotionList}>
                     <div className={classes.Heading}>
                         <h2>

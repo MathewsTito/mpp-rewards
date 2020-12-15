@@ -1,10 +1,10 @@
 {
     "request": {
         "method": "DELETE",
-        "urlPathPattern": "/promotions/([0-9]*)"
+        "urlPathPattern": "/promotions/1([0-9]*)"
     },
     "response": {
-        "fixedDelayMilliseconds": 2000,
+        "fixedDelayMilliseconds": 5000,
         "status": 200,
         "headers": {
             "Content-Type": "application/json"

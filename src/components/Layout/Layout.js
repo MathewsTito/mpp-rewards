@@ -19,7 +19,6 @@ const Layout = ( props ) => {
             <Sidebar/>
                 
             <main className={classes.Main}>
-                    <MessagePanel/>
                     <Switch>
                         <Route path="/promotions" exact component={PromotionList}/>
                         <Route path="/promotions/:promoid" exact component={PromotionDetail}/>

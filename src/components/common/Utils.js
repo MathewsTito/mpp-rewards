@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import classes from './Utils.module.css';
 import loading from '../../assets/giphy.gif';
@@ -17,10 +17,33 @@ export const NoPermission = () => (
 
 
 export const ConfirmationPanel = ({prompt,onConfirmAction,onCancelAction}) => {
+
+    const [modalClasses,setModalClasses] = useState([classes.Modal]);
+
+    const onClick = () => {      
+        const newModalClasses = [...modalClasses];
+        newModalClasses.push(classes.Show);
+        setModalClasses(newModalClasses);
+    }
+
+    const confirmAction = () => {
+        onClick();
+        onConfirmAction();
+    }
+
+    const cancelAction = () => {
+        onClick();
+        onCancelAction();
+    }  
+
     return (
+        
+        
         <div className={classes.ConfirmationPanel}>
-            
-            <span className="far fa-question-circle fa-4x"/>{prompt}<span><button onClick={onConfirmAction}>OK</button><button onClick={onCancelAction}>Cancel</button></span>
+            <div className={modalClasses.join(' ')}>
+                <img  src={loading} alt="Loading..."/>
+            </div>
+            <span className="far fa-question-circle fa-4x"/>{prompt}<span><button onClick={confirmAction}>OK</button><button onClick={cancelAction}>Cancel</button></span>
 
             
         </div>
