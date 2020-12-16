@@ -176,4 +176,15 @@ export const notificationDisplayedAction = () => (
 );
 
 
+export const toggleApplicationConsoleAction = () => (
+
+    {
+        type: "notification/expand",
+        placeholder: {}
+    }
+)
+
+
+
+
 

@@ -129,7 +129,7 @@ const notification = (currentState={content:null,displayed:true},action) => {
     }
 }
 
-const appConsole = (currentstate={lines:[],mcategory:[],topIndex:-1},action) => {
+const appConsole = (currentstate={lines:[],mcategory:[],topIndex:-1,expanded:false},action) => {
     
     switch (action.type){
         case "notification/added": {
@@ -137,9 +137,14 @@ const appConsole = (currentstate={lines:[],mcategory:[],topIndex:-1},action) => 
             const newTopIndex = currentstate.topIndex+1 % 100;
             const newlines = [...currentstate.lines];
             const newCategory = [...currentstate.mcategory];
-            newlines [newTopIndex] = ">>"+timestamp+" - "+content;
+            newlines [newTopIndex] = "> "+timestamp+" - "+content;
             newCategory[newTopIndex] = category;
-            return {lines:newlines,mcategory:newCategory,topIndex:newTopIndex}
+            return {lines:newlines,mcategory:newCategory,topIndex:newTopIndex,expanded:currentstate.expanded}
+        }
+
+        case "notification/expand": {
+            const newExpanded = !currentstate.expanded
+            return {...currentstate,expanded:newExpanded};
         }
         default:
             return currentstate;
