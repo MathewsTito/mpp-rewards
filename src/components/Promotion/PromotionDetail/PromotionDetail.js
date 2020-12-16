@@ -41,7 +41,6 @@ class PromotionDetail extends Component{
             case Constants.ACCESS_VIEW:
                 return (
                     <React.Fragment>
-                        <MessagePanel/>
                         <PromotionDetailView promotionDetail={this.props.promotionDetail}/>
                     </React.Fragment>
                 );
@@ -50,7 +49,6 @@ class PromotionDetail extends Component{
                 promptText = "Approve selected Promotion (id="+promoId+") ?";
                 return (
                     <React.Fragment>
-                        <MessagePanel/>
                         <ConfirmationPanel 
                             prompt={promptText} 
                             onCancelAction={()=>this.handleCancelAction()}
@@ -63,7 +61,6 @@ class PromotionDetail extends Component{
                 promptText = "Delete selected Promotion (id="+promoId+") ?";
                 return (
                     <React.Fragment>
-                        <MessagePanel/>
                         <ConfirmationPanel 
                             prompt={promptText} 
                             onCancelAction={()=>this.handleCancelAction()}

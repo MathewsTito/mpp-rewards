@@ -129,13 +129,32 @@ const notification = (currentState={content:null,displayed:true},action) => {
     }
 }
 
+const appConsole = (currentstate={lines:[],mcategory:[],topIndex:-1},action) => {
+    
+    switch (action.type){
+        case "notification/added": {
+            const {category,timestamp,content} = action.placeholder;
+            const newTopIndex = currentstate.topIndex+1 % 100;
+            const newlines = [...currentstate.lines];
+            const newCategory = [...currentstate.mcategory];
+            newlines [newTopIndex] = ">>"+timestamp+" - "+content;
+            newCategory[newTopIndex] = category;
+            return {lines:newlines,mcategory:newCategory,topIndex:newTopIndex}
+        }
+        default:
+            return currentstate;
+
+    }
+}
+
 const reducers = combineReducers({
         menuSelection: menuSelection,
         promotionSelection: promotionSelection,
         promotionList: promotionListLoad,
         promotionDetail: promotionDetailLoad,
         menuItems: menuItemsLoad,
-        notification:notification
+        notification: notification,
+        appConsole: appConsole
     });
 
 

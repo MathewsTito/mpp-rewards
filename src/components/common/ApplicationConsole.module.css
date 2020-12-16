@@ -1,0 +1,25 @@
+.ApplicationConsole {
+    overflow: hidden;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 10px 1px 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.90em;
+    display: flex;
+    background-color: rgb(240, 240, 240);
+
+}
+
+.Normal {
+    color: blue;
+    font-color: blue;
+}
+
+.Warning {
+    color: rgb(255, 102, 0);
+    font-color: rgb(255, 102, 0);
+}
+
+.Error {
+    color: red;
+    font-color: red;
+}

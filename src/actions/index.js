@@ -84,6 +84,19 @@ export const deletePromotionAction = (promoId) => {
                 placeholder: {status:status,data:data}       
             }
         );
+
+        const timestamp = new Date().toLocaleString();
+        if (status === 200){
+            dispatch ({
+                type: "notification/added",
+                placeholder: {category:"NORMAL",timestamp:timestamp,content:"Successfully deleted promotion with id="+promoId}
+            })
+        } else {
+            dispatch ({
+                type: "notification/added",
+                placeholder: {category:"ERROR",timestamp:timestamp,content:"Error deleting promotion with id="+promoId+". Please check console"}
+            })            
+        }
     } 
 }
 
@@ -108,6 +121,19 @@ export const approvePromotionAction = (promoId) => {
                 placeholder: {status:status,data:data}       
             }
         );
+
+        const timestamp = new Date().toLocaleString();
+        if (status === 200){
+            dispatch ({
+                type: "notification/added",
+                placeholder: {category:"NORMAL",timestamp:timestamp,content:"Successfully approved promotion with id="+promoId}
+            })
+        } else {
+            dispatch ({
+                type: "notification/added",
+                placeholder: {category:"ERROR",timestamp:timestamp,content:"Error approving promotion with id="+promoId+". Please check console"}
+            })            
+        }
     } 
 }
 
@@ -135,10 +161,10 @@ export const menuToggledAction = (menuKey) => (
     }
 );
 
-export const notificationAddAction = (category,content) => (
+export const notificationAddAction = (category,timestamp,content) => (
     {
         type: "notification/added",
-        placeholder: {type:category,content:content}
+        placeholder: {category:category,timestamp:timestamp,content:content}
     }
 );
 

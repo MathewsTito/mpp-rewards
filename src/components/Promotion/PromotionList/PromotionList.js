@@ -17,7 +17,6 @@ class PromotionList extends Component{
 
         return (
             <React.Fragment>
-                <MessagePanel/>
                 <div className={classes.PromotionList}>
                     <div className={classes.Heading}>
                         <h2>
