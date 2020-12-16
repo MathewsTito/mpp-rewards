@@ -2,6 +2,8 @@
   margin-left: 200px;
   overflow: hidden;
   width: calc(100%-200px);
+  min-height:50em;
+
 }
 .Body {
   margin: 0px 0px 0px 0px;

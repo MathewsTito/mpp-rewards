@@ -1,8 +1,10 @@
 .Loading {
     height: 100%;
+    margin-top: 25em;
     display: flex;
     align-items: center;
-    justify-content: center 
+    justify-content: center ;
+    overflow:hidden;
 }
 
 .Loading img {

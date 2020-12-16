@@ -31,6 +31,7 @@ class PromotionDetail extends Component{
             return (<Loading/>);
         } 
 
+
         //Check if the user has permission for the action on the object
         if (!this.props.promotionDetail.allowedActions.includes(action)){
             return (<NoPermission/>);
