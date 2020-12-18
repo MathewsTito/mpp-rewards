@@ -63,7 +63,7 @@ const ApplicationConsole = (props) => {
             jsxholder[9-i] = typeof line === 'undefined' ? 
                             null:
                              <div className={css.join(' ')}>
-                                 {isThisTheFirstLine?<img className={classes.Rotate}  src={arrow} alt="arrow" height="10px"/>:<img className={classes.Image} src={blank} alt="arrow" height="12px"/>}
+                                 {isThisTheFirstLine?<img className={classes.Rotate} height="12px" src={arrow} alt="arrow"/>:<img className={classes.Image} height="12px" src={blank} alt="arrow" height="12px"/>}
                                  {props.appConsole.lines[thisIndex]}
                              </div>;
         }
@@ -77,7 +77,7 @@ const ApplicationConsole = (props) => {
         return (
             <div className={cssClasses.join(' ')} onClick={toggleExpansion}>
                 <div className={classes.Message}>
-                    <img className={classes.RotateAnti} src={arrow} alt="arrow" height="10px"/>
+                    <img className={classes.RotateAnti} height="12px" src={arrow} alt="arrow" />
                     {content}
                 </div>
             </div>

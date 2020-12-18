@@ -27,3 +27,32 @@
     max-height: 0px;
     overflow: hidden;
 }
+
+.RotateClockwise{
+    animation: rotate-clockwise 0.5s;
+    transform-origin: 50% 50%;
+    transform:rotate(90deg);
+    margin-right: 10px;
+}
+
+.RotateAntiClockwise:hover{
+    fill: white;
+    stroke: white;
+}
+
+@keyframes rotate-clockwise {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(90deg);}
+}
+
+.RotateAntiClockwise{
+    animation: rotate-anticlockwise 0.5s;
+    transform-origin: 50% 50%;
+    margin-right: 10px;
+}
+
+
+@keyframes rotate-anticlockwise {
+    from {transform:rotate(90deg);}
+    to {transform:rotate(0deg);}
+}

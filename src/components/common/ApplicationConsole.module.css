@@ -39,6 +39,7 @@
 
 .Image {
     margin-right: 10px;
+
 }
 
 .Rotate{
@@ -46,7 +47,7 @@
     transform-origin: 50% 50%;
     transform:rotate(90deg);
     margin-right: 10px;
-    
+    font-size: 1.2em;
 }
 
 @keyframes rotate-clockwise {
@@ -58,6 +59,7 @@
     animation: rotate-anticlockwise 0.5s;
     transform-origin: 50% 50%;
     margin-right: 10px;
+    font-size: 1.2em;
 }
 
 @keyframes rotate-anticlockwise {
