@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
 import classes from './Utils.module.css';
-import loading from '../../assets/giphy.gif';
+import loading from '../../assets/spinner.svg';
 
 export const Loading = () => (
     <div className={classes.Loading}>
-        <img  src={loading} alt="Loading..."/>
+        <img height="150px" src={loading} alt="Loading..."/>
     </div>
 );
 
@@ -41,7 +41,7 @@ export const ConfirmationPanel = ({prompt,onConfirmAction,onCancelAction}) => {
         
         <div className={classes.ConfirmationPanel}>
             <div className={modalClasses.join(' ')}>
-                <img  src={loading} alt="Loading..."/>
+                <img height="150px" src={loading} alt="Loading..."/>
             </div>
             <span className="far fa-question-circle fa-4x"/>{prompt}<span><button onClick={confirmAction}>OK</button><button onClick={cancelAction}>Cancel</button></span>
 
