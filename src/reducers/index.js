@@ -137,7 +137,7 @@ const appConsole = (currentstate={lines:[],mcategory:[],topIndex:-1,expanded:fal
             const newTopIndex = currentstate.topIndex+1 % 100;
             const newlines = [...currentstate.lines];
             const newCategory = [...currentstate.mcategory];
-            newlines [newTopIndex] = "> "+timestamp+" - "+content;
+            newlines [newTopIndex] = "  "+timestamp+" - "+content;
             newCategory[newTopIndex] = category;
             return {lines:newlines,mcategory:newCategory,topIndex:newTopIndex,expanded:currentstate.expanded}
         }

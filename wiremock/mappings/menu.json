@@ -21,12 +21,6 @@
                         },
                         {
                             "key": 12,
-                            "displayLine": "Update Existing",
-                            "path": "/updatePromotion",
-                            "css": "fas fa-edit"
-                        },
-                        {
-                            "key": 13,
                             "displayLine": "View Existing",
                             "path": "/promotions",
                             "css": "fas fa-eye"
@@ -47,12 +41,6 @@
                         },
                         {
                             "key": 22,
-                            "displayLine": "Update",
-                            "path": "/updateOffer",
-                            "css": "fas fa-edit"
-                        },
-                        {
-                            "key": 23,
                             "displayLine": "View",
                             "path": "/viewOffer",
                             "css": "fas fa-eye"
@@ -73,12 +61,6 @@
                         },
                         {
                             "key": 32,
-                            "displayLine": "Update",
-                            "path": "/updateCatchup",
-                            "css": "fas fa-edit"
-                        },
-                        {
-                            "key": 33,
                             "displayLine": "View",
                             "path": "/viewCatchup",
                             "css": "fas fa-eye"

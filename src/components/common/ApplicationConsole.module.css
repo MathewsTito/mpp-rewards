@@ -6,7 +6,15 @@
     font-size: 0.90em;
     display: flex;
     background-color: rgb(240, 240, 240);
+    flex-direction: column;
 
+}
+
+.Message {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
 }
 
 .Normal {
@@ -22,4 +30,32 @@
 .Error {
     color: red;
     font-color: red;
+}
+
+.Image {
+    margin-right: 10px;
+}
+
+.Rotate{
+    animation: rotate-clockwise 0.5s;
+    transform-origin: 50% 50%;
+    transform:rotate(90deg);
+    margin-right: 10px;
+    
+}
+
+@keyframes rotate-clockwise {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(90deg);}
+}
+
+.RotateAnti{
+    animation: rotate-anticlockwise 0.5s;
+    transform-origin: 50% 50%;
+    margin-right: 10px;
+}
+
+@keyframes rotate-anticlockwise {
+    from {transform:rotate(90deg);}
+    to {transform:rotate(0deg);}
 }

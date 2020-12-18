@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import arrow from '../../assets/arrow.svg';
+import blank from '../../assets/blank.svg';
 import classes from './ApplicationConsole.module.css'
 import {toggleApplicationConsoleAction} from '../../actions'
 
@@ -39,18 +41,30 @@ const ApplicationConsole = (props) => {
 
         const jsxholder = [];
         for (var i=0;i<10;i++){
-            var css = [classes.ApplicationConsole];
+            var css = [classes.Message];
 
             var thisIndex = (index - i)
             if (thisIndex < 0)
                 thisIndex = 100-thisIndex;
             
             const line = props.appConsole.lines[thisIndex]
+
+            //Determine if this line is the first line that will be displayed in the console
+            var isThisTheFirstLine = false;
+            const prevLine = props.appConsole.lines[thisIndex-1===-1?99:thisIndex-1];
+            if (typeof prevLine === 'undefined')
+                isThisTheFirstLine = true;
+
             css.push(getCSSforCategory(props.appConsole.mcategory[thisIndex]))
-            jsxholder[9-i] = typeof line === 'undefined' ? null: <div className={css.join(' ')}>{props.appConsole.lines[thisIndex]}</div>;
+            jsxholder[9-i] = typeof line === 'undefined' ? 
+                            null:
+                             <div className={css.join(' ')}>
+                                 {isThisTheFirstLine?<img className={classes.Rotate}  src={arrow} alt="arrow" height="10px"/>:<img className={classes.Image} src={blank} alt="arrow" height="12px"/>}
+                                 {props.appConsole.lines[thisIndex]}
+                             </div>;
         }
         return (
-            <div onClick={toggleExpansion}>
+            <div className={classes.ApplicationConsole} onClick={toggleExpansion}>
                 {jsxholder}
             </div>
         )
@@ -58,7 +72,10 @@ const ApplicationConsole = (props) => {
     } else {
         return (
             <div className={cssClasses.join(' ')} onClick={toggleExpansion}>
-                {content}
+                <div className={classes.Message}>
+                    <img className={classes.RotateAnti} src={arrow} alt="arrow" height="10px"/>
+                    {content}
+                </div>
             </div>
         )
     }
