@@ -29,7 +29,7 @@ const ApplicationConsole = (props) => {
     const category = props.appConsole.mcategory[index];
     const content = props.appConsole.lines[index];
 
-    const cssClasses = [classes.ApplicationConsole];
+    const cssClasses = [classes.ApplicationConsole,classes.Collapsed];
     if (category === "NORMAL")
         cssClasses.push(classes.Normal)
     else  if (category === "WARNING")
@@ -51,9 +51,13 @@ const ApplicationConsole = (props) => {
 
             //Determine if this line is the first line that will be displayed in the console
             var isThisTheFirstLine = false;
-            const prevLine = props.appConsole.lines[thisIndex-1===-1?99:thisIndex-1];
-            if (typeof prevLine === 'undefined')
+            if (i===9)
                 isThisTheFirstLine = true;
+            else {
+                const prevLine = props.appConsole.lines[thisIndex-1===-1?99:thisIndex-1];
+                if (typeof prevLine === 'undefined')
+                    isThisTheFirstLine = true;
+            }
 
             css.push(getCSSforCategory(props.appConsole.mcategory[thisIndex]))
             jsxholder[9-i] = typeof line === 'undefined' ? 
