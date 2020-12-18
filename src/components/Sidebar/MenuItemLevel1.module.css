@@ -11,6 +11,7 @@
     background-color: black;
     color: white;
     font-weight:bold;
+    fill: white;
 }
 
 .SubMenu{
@@ -32,13 +33,9 @@
     animation: rotate-clockwise 0.5s;
     transform-origin: 50% 50%;
     transform:rotate(90deg);
-    margin-right: 10px;
+    margin-right: 2px;
 }
 
-.RotateAntiClockwise:hover{
-    fill: white;
-    stroke: white;
-}
 
 @keyframes rotate-clockwise {
     from {transform:rotate(0deg);}
@@ -48,7 +45,7 @@
 .RotateAntiClockwise{
     animation: rotate-anticlockwise 0.5s;
     transform-origin: 50% 50%;
-    margin-right: 10px;
+    margin-right: 2px;
 }
 
 
