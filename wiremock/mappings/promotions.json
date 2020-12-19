@@ -10,37 +10,65 @@
             "id": 12345,
             "description": "My very first promotion",
             "createdBy": "Tito Mathews",
-            "createDate": "04/08/2005"
+            "createDate": "04/08/2005",
+            "canDelete": false,
+            "canEdit": false,
+            "canApprove": false,
+            "canView": true
          },
          {  "id": 12346,
             "description": "My very second promotion",
             "createdBy": "Tito Mathews",
-            "createDate": "04/09/2005"
+            "createDate": "04/09/2005",
+            "canDelete": false,
+            "canEdit": true,
+            "canApprove": true,
+            "canView": true
          },
          {  "id": 12347,
             "description": "My very second promotion v2",
             "createdBy": "Tito Mathews",
-            "createDate": "04/09/2005"
+            "createDate": "04/09/2005",
+            "canDelete": false,
+            "canEdit": true,
+            "canApprove": false,
+            "canView": true
          },
          {  "id": 12348,
             "description": "My very second promotion v3",
             "createdBy": "Tito Mathews",
-            "createDate": "04/09/2005"
+            "createDate": "04/09/2005",
+            "canDelete": false,
+            "canEdit": false,
+            "canApprove": false,
+            "canView": true
          },
          {  "id": 12349,
             "description": "My very third promotion v1",
             "createdBy": "Tito Mathews",
-            "createDate": "04/09/2005"
+            "createDate": "04/09/2005",
+            "canDelete": true,
+            "canEdit": true,
+            "canApprove": false,
+            "canView": true
          },
          {  "id": 12350,
             "description": "My very fifth promotion v6",
             "createdBy": "Tito Mathews",
-            "createDate": "04/09/2005"
+            "createDate": "04/09/2005",
+            "canDelete": true,
+            "canEdit": true,
+            "canApprove": true,
+            "canView": true
          },
          {  "id": 22350,
             "description": "My very fifth promotion v6",
             "createdBy": "Tito Mathews",
-            "createDate": "04/09/2005"
+            "createDate": "04/09/2005",
+            "canDelete": true,
+            "canEdit": true,
+            "canApprove": true,
+            "canView": true
          }
         ],
         "headers": {

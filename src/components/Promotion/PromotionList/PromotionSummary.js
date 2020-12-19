@@ -6,7 +6,7 @@ import CRUDControls from '../../common/CRUDControls';
 import * as PromotionConstants from '../PromotionConstants';
  
 const PromotionSummary = (props) => { 
-    const {id,description,createdBy,createDate} = {...props.promotion};
+    const {id,description,createdBy,createDate,canEdit=false,canDelete=false,canApprove=false,canView=false} = {...props.promotion};
     return (
        <tr onDoubleClick={()=>props.viewPromotionAction(id)}>
            <td>{id}</td>
@@ -15,8 +15,10 @@ const PromotionSummary = (props) => {
            <td>{createDate}</td>
            <td style={{padding: "0px 15px 0px 0px","vertical-align": "middle"}}>
                <CRUDControls 
-                    isDelete="true"
-                    isEdit="true"
+                    isDelete={canDelete}
+                    isEdit={canEdit}
+                    isApprove={canApprove}
+                    isView={canView}
                     deleteLink={PromotionConstants.LINK_PROMOTION_DELETE.replaceAll("{0}",id)}
                     editLink={PromotionConstants.LINK_PROMOTION_EDIT.replaceAll("{0}",id)}
                     approveLink={PromotionConstants.LINK_PROMOTION_APPROVE.replaceAll("{0}",id)}

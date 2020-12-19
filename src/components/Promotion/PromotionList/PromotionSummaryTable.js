@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import PromotionSummary from './PromotionSummary';
-import classes from './PromotionList.module.css';
+import classes from './PromotionSummaryTable.module.css';
 import {Loading} from '../../common/Utils';
 
   
@@ -14,10 +14,10 @@ const PromotionSummaryTable = (props) => {
 
     const myclasses = [classes.PromotionSummaryTable]
 
-    if(props.selectedPromotionId > 0) 
-        myclasses.push(classes.Hidden);
-    else
-        myclasses.push(classes.Visible);
+    // if(props.selectedPromotionId > 0) 
+    //     myclasses.push(classes.Hidden);
+    // else
+    //     myclasses.push(classes.Visible);
 
     return ( 
         <div className={myclasses.join(' ')}>
@@ -27,6 +27,7 @@ const PromotionSummaryTable = (props) => {
                     <th>Promotion Name</th>
                     <th>Created By</th>
                     <th>Creation Date</th>
+
                 </thead>
                 <tbody>
                     {promotionList?promotionList.map(promo => {
