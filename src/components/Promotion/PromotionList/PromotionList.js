@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import PromotionSummaryTable from './PromotionSummaryTable'
 import classes from './PromotionList.module.css'
 import {loadPromotionsAction} from '../../../actions'
-import MessagePanel from '../../common/MessagePanel';
 
 class PromotionList extends Component{
  

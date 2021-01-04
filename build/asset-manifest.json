@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.27bd3332.chunk.css",
+    "main.js": "/static/js/main.44cdcd23.chunk.js",
+    "main.js.map": "/static/js/main.44cdcd23.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cc36ebbd.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cc36ebbd.js.map",
+    "static/js/2.c400e0c3.chunk.js": "/static/js/2.c400e0c3.chunk.js",
+    "static/js/2.c400e0c3.chunk.js.map": "/static/js/2.c400e0c3.chunk.js.map",
+    "static/js/3.c9fa5d5b.chunk.js": "/static/js/3.c9fa5d5b.chunk.js",
+    "static/js/3.c9fa5d5b.chunk.js.map": "/static/js/3.c9fa5d5b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.27bd3332.chunk.css.map": "/static/css/main.27bd3332.chunk.css.map",
+    "static/js/2.c400e0c3.chunk.js.LICENSE.txt": "/static/js/2.c400e0c3.chunk.js.LICENSE.txt",
+    "static/media/arrow.a756cfd3.svg": "/static/media/arrow.a756cfd3.svg",
+    "static/media/blank.0448fda4.svg": "/static/media/blank.0448fda4.svg",
+    "static/media/Toolbar.module.css": "/static/media/brand.c32a89eb.png",
+    "static/media/spinner.a7c141e1.svg": "/static/media/spinner.a7c141e1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cc36ebbd.js",
+    "static/js/2.c400e0c3.chunk.js",
+    "static/css/main.27bd3332.chunk.css",
+    "static/js/main.44cdcd23.chunk.js"
+  ]
+}

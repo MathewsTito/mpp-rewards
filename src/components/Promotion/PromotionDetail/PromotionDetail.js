@@ -5,7 +5,7 @@ import {Loading,NoPermission,ConfirmationPanel} from '../../common/Utils';
 import * as Constants from '../../common/Constants';
 import PromotionDetailView from './PromotionDetailView';
 import {loadPromotionDetailsAction,approvePromotionAction,deletePromotionAction} from '../../../actions';
-import MessagePanel from '../../common/MessagePanel';
+
 
 class PromotionDetail extends Component{
 

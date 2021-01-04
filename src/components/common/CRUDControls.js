@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import classes from './CRUDControls.module.css';
 
 const CRUDControls = (props) => {
-    const {isView=true,isEdit=false,isDelete=false,isApprove=true,viewLink,editLink,deleteLink,approveLink} = props;
+    const {isView=false,isEdit=false,isDelete=false,isApprove=false,viewLink,editLink,deleteLink,approveLink} = props;
 
     return (
         
@@ -12,7 +12,7 @@ const CRUDControls = (props) => {
             { isDelete && 
                 <Link to={deleteLink}>
                     <div className={classes.Icon}>
-                        <span className="fas fa-trash-alt" style={{"font-size":"1.25em"}}/>
+                        <span className="fas fa-trash-alt" style={{"fontSize":"1.25em"}}/>
                     </div>
                 </Link>
             }
@@ -20,7 +20,7 @@ const CRUDControls = (props) => {
             { isEdit &&
                 <Link to={editLink}>
                     <div className={classes.Icon}>
-                        <span className="fas fa-edit" style={{"font-size":"1.25em"}}/>
+                        <span className="fas fa-edit" style={{"fontSize":"1.25em"}}/>
                     </div>
                 </Link>
             }
@@ -28,7 +28,7 @@ const CRUDControls = (props) => {
             { isApprove &&
                  <Link to={approveLink}>
                     <div className={classes.Icon}>
-                        <span className="fas fa-thumbs-up" style={{"font-size":"1.25em"}}/>
+                        <span className="fas fa-thumbs-up" style={{"fontSize":"1.25em"}}/>
                     </div>
                 </Link>
             }
@@ -36,7 +36,7 @@ const CRUDControls = (props) => {
             { isView &&
                 <Link to={viewLink}>
                     <div className={classes.Icon}>
-                        <span className="fas fa-eye" style={{"font-size":"1.25em"}}/>
+                        <span className="fas fa-eye" style={{"fontSize":"1.25em"}}/>
                     </div>
                 </Link>
             }
